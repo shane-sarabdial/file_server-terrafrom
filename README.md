@@ -5,11 +5,11 @@
 ## Table of Contents
 
 ---
-[Introduction](#introduction)
-[Prerequisites](#Prerequistes)
-[Tutorial](#tutorial)
-1. [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
-2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
+* [Introduction](#introduction)
+* [Prerequisites](#Prerequistes)
+* [Tutorial](#tutorial)
+- 1. [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
+- 2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
 3. [Creating a Variable File](#Creating-a-Variable-File)
 4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
 5. [Creating a Security Group](#Creating-a-Security-Group)
