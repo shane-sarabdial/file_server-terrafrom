@@ -107,7 +107,7 @@ ami-id = "ami-044b654780812c565"
 instance = "t2.medium"
 ```
 
-### 4. Creating an EC2 Instance with Terraform
+### Creating an EC2 Instance with Terraform
 
 Next, we will create an EC2 instance with the Filecloud image installed. To do this go back to the AWS console and type "EC2" in the search bar. On the side menu click on AMI Catalog. Here you will search for "Filecloud" in the AWS marketplace.
 
