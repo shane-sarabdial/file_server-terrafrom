@@ -7,9 +7,18 @@
 ---
 
 * [Introduction](#introduction)
-* Tutorial
-* Prerequisites
-* Creating an AWS key and secret
+* [Tutorial](#Tutorial)
+  * [Prerequisites](#Prerequisites)
+  * [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
+  * [Configuring Terraform to Access AWS](#Configuring-Terraform-to-Access-AWS)
+  * [Creating a Variable File](#Creating-a-Variable-File)
+  * [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
+  * [Creating a Security Group](#Creating-a-Security-Group)
+  * [Creating a S3 Bucket](#Creating-a-S3-Bucket)
+  * [Configuirng S3](#Configuirng-S3)
+  * [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
+  * [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
+  * [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
 
 ## Introduction
 
@@ -39,11 +48,11 @@ Before you start you must have an AWS account, installed the AWS CLI, and downlo
 * [How to install Terraform on Windows](https://www.youtube.com/watch?v=n7fPpXxHWOY)
 * [Install or update the latest version of the AWS CLI - AWS Command Line Interface (amazon.com)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-# Tutorial
+## Tutorial
 
 ---
 
-### 1. Creating a new user and creating an access key for our terminal.
+### 1. Creating a New User and Creating an Access Key for our Terminal
 
 Once you have created an AWS account we need to create a new user with admin access. It is best practice to not use the root user account. To do this we go to the search bar in the aws console and type "iam". Select the first service that appears. Then click "add user" in the upper right-hand corner. Create a user name and select next.
 
@@ -53,14 +62,14 @@ Next, you will want to select "attach policy directly" search "admin" in the pol
 
 ![admin.png](./assets/admin.png)
 
-Once you have created the user select the user from the list of users. You will then select "Security Credentials" on the following screen and create an access key. On the next screen select the "Command Line Interface (CLI)" option and continue till you create the access key. Your key name and secret will be available to download via a .csv. Before you click done open up a terminal in windows and enter the following command
+Once you have created the user select the user from the list of users. You will then select "Security Credentials" on the following screen and create an access key. On the next screen select the "Command Line Interface (CLI)" option and continue till you create the access key. Your key name and secret will be available to download via a .csv. Before you click done open up a terminal in Windows and enter the following command
 `aws configure`
 paste your access key and secret access key in the appropriate prompts and press enter till you finished the configuration.
 
 ![access_key.png](./assets/access_key.png)
 ![terminal.png](./assets/terminal.png)
 
-### 2. Configuring terraform to access AWS
+### 2. Configuring Terraform to Access AWS
 
 ---
 
@@ -88,7 +97,7 @@ profile = "default"
 
 The code above grants permission to Terraform so it can access our AWS. The "shared config_files" and "shared_credential_files" contain our access key and secret access key for Terraform to establish a connection to AWS. If your using a different operating system your configuration files will be located in a different folder. Refer to [Docs overview](https://registry.terraform.io/providers/hashicorp/aws/latest/docs) to find your specific configuration. Next, run the following command `terraform init` in the terminal where your project file is located. This command will download the necessary files to connect to AWS.
 
-### 3. Create a variable file
+### 3. Creating a Variable File
 
 Going back to our project folder create a new file called "terraform.tfvars". These variables are swappable so you can change configurations and access keys.
 
@@ -98,7 +107,7 @@ ami-id = "ami-044b654780812c565"
 instance = "t2.medium"
 ```
 
-### 4. Creating an EC2 instance with Terraform
+### 4. Creating an EC2 Instance with Terraform
 
 Next, we will create an EC2 instance with the Filecloud image installed. To do this go back to the AWS console and type "EC2" in the search bar. On the side menu click on AMI Catalog. Here you will search for "Filecloud" in the AWS marketplace.
 
@@ -142,7 +151,7 @@ resource "aws_instance" "file_server" {
 
 ## ***Note I used a t2.medium which is not free tier eligible. To use the free tier change the instance type to a t2.micro in the variable file.***
 
-### 5. Create a Security Group
+### 5. Creating a Security Group
 
 We need a security group to allow inbound traffic from HTTP, HTTPS, and SSH. The configuration below will create a security group called "fc_sg" and we will attach it to our EC2 instance.
 
@@ -197,7 +206,7 @@ resource "aws_security_group_rule" "allow_ssh" {
 }
 ```
 
-### 6. Create S3 bucket
+### 6. Creating a S3 Bucket
 
 ---
 
@@ -259,7 +268,7 @@ output "secret" {
 
 We now have all the required infrastructure to set up our cloud file server. Sign up for a free trial of [FileCloud Community Edition](https://ce.filecloud.com/#communityTrial). This will give you a 1-year license, no credit card is necessary. Once you signed up you download the license file into your project folder and make sure to include it in your .gitignore.
 
-### 9. SSH into your EC2 instance
+### 9. SSH into your EC2 Instance
 
 To access your file server go back to the aws console, select your instance and find the Public IP4 DNS address. Copy it and paste it into a new tab and add /admin to the end. This will bring you to the login landing page for your server. The username is "admin" and the password is your instance ID as shown below.
 
@@ -269,7 +278,7 @@ To access your file server go back to the aws console, select your instance and 
 
 Once you log in you will have to provide the license file in step 6.
 
-### 10. Configuring FileCloud to access S3
+### 10. Configuring FileCloud to Access S3 Bucket
 
 ---
 
