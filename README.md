@@ -9,16 +9,16 @@
 * [Introduction](#introduction)
 * [Prerequisites](#Prerequistes)
 * [Tutorial](#tutorial)
-  1. [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
-  2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
-  3. [Creating a Variable File](#Creating-a-Variable-File)
-  4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
-  5. [Creating a Security Group](#Creating-a-Security-Group)
-  6. [Creating a S3 Bucket](#Creating-a-S3-Bucket)
-  7. [Configuirng S3](#Configuirng-S3)
-  8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
-  9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
-  10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
+    1. [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
+    2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
+    3. [Creating a Variable File](#Creating-a-Variable-File)
+    4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
+    5. [Creating a Security Group](#Creating-a-Security-Group)
+    6. [Creating a S3 Bucket](#Creating-a-S3-Bucket)
+    7. [Configuirng S3](#Configuirng-S3)
+    8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
+    9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
+    10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
 
 ## Introduction
 
@@ -52,7 +52,7 @@ Before you start you must have an AWS account, installed the AWS CLI, and downlo
 
 ---
 
-### 1. Creating a New User and Creating an Access Key for our Terminal
+### Creating a New User and Creating an Access Key for our Terminal
 
 Once you have created an AWS account we need to create a new user with admin access. It is best practice to not use the root user account. To do this we go to the search bar in the aws console and type "iam". Select the first service that appears. Then click "add user" in the upper right-hand corner. Create a user name and select next.
 
