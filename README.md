@@ -6,7 +6,7 @@
 
 ---
 
-* Introduction
+* [Introduction](#introduction)
 * Tutorial
 * Prerequisites
 * Creating an AWS key and secret
