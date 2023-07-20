@@ -5,10 +5,9 @@
 ## Table of Contents
 
 ---
-
-* [Introduction](#introduction)
-* [Prerequisites](#Prerequistes)
-* [Tutorial](#tutorial)
+[Introduction](#introduction)
+[Prerequisites](#Prerequistes)
+[Tutorial](#tutorial)
     1. [Creating a New User and Creating an Access Key for our Terminal](#Creating-a-New-User-and-Creating-an-Access-Key-for-our-Terminal)
     2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
     3. [Creating a Variable File](#Creating-a-Variable-File)
@@ -19,6 +18,7 @@
     8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
     9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
     10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
+ 
 
 ## Introduction
 
