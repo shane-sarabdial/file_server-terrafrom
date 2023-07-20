@@ -10,7 +10,7 @@
 *  [Prerequisites](#prerequisites)
 * [Tutorial](#tutorial)
 * [Creating a New User and Creating an Access Key for our Terminal](#1.-creating-a-new-user-and-creating-an-access-key-for-our-terminal)
-* [Configuring Terraform to Access AWS](#2.-configuring-terraform-to-access-aws)
+* [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
 * [Creating a Variable File](#Creating-a-Variable-File)
   4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
   5. [Creating a Security Group](#Creating-a-Security-Group)
@@ -69,7 +69,7 @@ paste your access key and secret access key in the appropriate prompts and press
 ![access_key.png](./assets/access_key.png)
 ![terminal.png](./assets/terminal.png)
 
-### 2. Configuring Terraform to Access AWS
+### Configuring Terraform to Access AWS
 
 ---
 
