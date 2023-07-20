@@ -7,18 +7,18 @@
 ---
 
 * [Introduction](#introduction)
+*  [Prerequisites](#Prerequisites)
 * [Tutorial](#Tutorial)
-  * [Prerequisites](#Prerequisites)
-  * [Creating a New User and Creating an Access Key for our Terminal](#creating-a-new-User-and-creating-an-access-key-for-our-terminal)
-  * [Configuring Terraform to Access AWS](#Configuring-Terraform-to-Access-AWS)
-  * [Creating a Variable File](#Creating-a-Variable-File)
-  * [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
-  * [Creating a Security Group](#Creating-a-Security-Group)
-  * [Creating a S3 Bucket](#Creating-a-S3-Bucket)
-  * [Configuirng S3](#Configuirng-S3)
-  * [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
-  * [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
-  * [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
+  1. [Creating a New User and Creating an Access Key for our Terminal](#1.-creating-a-new-User-and-creating-an-access-key-for-our-terminal)
+  2. [Configuring Terraform to Access AWS](#Configuring-Terraform-to-Access-AWS)
+  3. [Creating a Variable File](#Creating-a-Variable-File)
+  4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
+  5. [Creating a Security Group](#Creating-a-Security-Group)
+  6. [Creating a S3 Bucket](#Creating-a-S3-Bucket)
+  7. [Configuirng S3](#Configuirng-S3)
+  8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
+  9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
+  10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
 
 ## Introduction
 
