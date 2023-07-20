@@ -7,18 +7,18 @@
 ---
 
 * [Introduction](#introduction)
-*  [Prerequisites](#prerequisites)
+* [Prerequisites](#Prerequistes)
 * [Tutorial](#tutorial)
-* [Creating a New User and Creating an Access Key for our Terminal](#1.-creating-a-new-user-and-creating-an-access-key-for-our-terminal)
-* [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
-* [Creating a Variable File](#Creating-a-Variable-File)
-  4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
-  5. [Creating a Security Group](#Creating-a-Security-Group)
-  6. [Creating a S3 Bucket](#Creating-a-S3-Bucket)
-  7. [Configuirng S3](#Configuirng-S3)
-  8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
-  9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
-  10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
+1. [Creating a New User and Creating an Access Key for our Terminal](#creating-a-new-user-and-creating-an-access-key-for-our-terminal)
+2. [Configuring Terraform to Access AWS](#configuring-terraform-to-access-aws)
+3. [Creating a Variable File](#Creating-a-Variable-File)
+4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
+5. [Creating a Security Group](#Creating-a-Security-Group)
+6. [Creating a S3 Bucket](#Creating-a-S3-Bucket)
+7. [Configuirng S3](#Configuirng-S3)
+8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
+9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
+10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
 
 ## Introduction
 
@@ -97,7 +97,7 @@ profile = "default"
 
 The code above grants permission to Terraform so it can access our AWS. The "shared config_files" and "shared_credential_files" contain our access key and secret access key for Terraform to establish a connection to AWS. If your using a different operating system your configuration files will be located in a different folder. Refer to [Docs overview](https://registry.terraform.io/providers/hashicorp/aws/latest/docs) to find your specific configuration. Next, run the following command `terraform init` in the terminal where your project file is located. This command will download the necessary files to connect to AWS.
 
-### 3. Creating a Variable File
+### Creating a Variable File
 
 Going back to our project folder create a new file called "terraform.tfvars". These variables are swappable so you can change configurations and access keys.
 
@@ -151,7 +151,7 @@ resource "aws_instance" "file_server" {
 
 ## ***Note I used a t2.medium which is not free tier eligible. To use the free tier change the instance type to a t2.micro in the variable file.***
 
-### 5. Creating a Security Group
+### Creating a Security Group
 
 We need a security group to allow inbound traffic from HTTP, HTTPS, and SSH. The configuration below will create a security group called "fc_sg" and we will attach it to our EC2 instance.
 
@@ -206,7 +206,7 @@ resource "aws_security_group_rule" "allow_ssh" {
 }
 ```
 
-### 6. Creating a S3 Bucket
+### Creating a S3 Bucket
 
 ---
 
@@ -221,7 +221,7 @@ resource "aws_s3_bucket" "storage_s3" {
 }
 ```
 
-### 7. Configuirng S3
+### Configuirng S3
 
 ---
 
@@ -264,11 +264,11 @@ output "secret" {
 }
 ```
 
-### 8. Getting a Filecloud Account and License
+### Getting a Filecloud Account and License
 
 We now have all the required infrastructure to set up our cloud file server. Sign up for a free trial of [FileCloud Community Edition](https://ce.filecloud.com/#communityTrial). This will give you a 1-year license, no credit card is necessary. Once you signed up you download the license file into your project folder and make sure to include it in your .gitignore.
 
-### 9. SSH into your EC2 Instance
+### SSH into your EC2 Instance
 
 To access your file server go back to the aws console, select your instance and find the Public IP4 DNS address. Copy it and paste it into a new tab and add /admin to the end. This will bring you to the login landing page for your server. The username is "admin" and the password is your instance ID as shown below.
 
