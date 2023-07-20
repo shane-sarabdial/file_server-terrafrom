@@ -19,6 +19,7 @@
   8. [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License)
   9. [SSH into your EC2 Instance](#SSH-into-your-EC2-Instance)
   10. [Configuring FileCloud to Access S3 Bucket](#Configuring-FileCloud-to-Access-S3-Bucket)
+  11. [Finishing Touches](#Finishing-Touches)
 
 
 ## Introduction
@@ -118,7 +119,7 @@ Select the first ami that shows up and then click continue on the next screen. T
 
 ![amiid.png](./assets/ami%20id.png)
 
-Before we leave the console we need to create a key pair so we can SSH into our Amazon instance. Currently, this cannot be done through terraform and must be done in the console. Navigate to "key pairs" under Network and Security and click "create key pair" on the upper right-hand side. Give your key pair a name, in my case I called it "file_server". Select RSA and .pem option then create the key pair. The key pair will download as a .pem file. I suggest saving it in your project folder and including it in the .gitignore. Copy the key name into the key_pair variable in your variable file.
+Before we leave the console we need to create a key pair so we can SSH into our Amazon instance. Currently, this cannot be done through Terraform and must be done in the console. Navigate to "key pairs" under Network and Security and click "create key pair" on the upper right-hand side. Give your key pair a name, in my case I called it "file_server". Select RSA and .pem option then create the key pair. The key pair will download as a .pem file. I suggest saving it in your project folder and including it in the .gitignore. Copy the key name into the key_pair variable in your variable file.
 
 ![keypair.png](./assets/keypair.png)
 
@@ -277,15 +278,15 @@ To access your file server go back to the aws console, select your instance and 
 
 ![login.png](./assets/login.png)
 
-Once you log in you will have to provide the license file in step 6.
+Once you log in you will have to provide the license file in step 8 [Getting a Filecloud Account and License](#Getting-a-Filecloud-Account-and-License).
 
-### 10. Configuring FileCloud to Access S3 Bucket
+### Configuring FileCloud to Access S3 Bucket
 
 ---
 
 Navigate to the settings in Filecloud and locate the storage settings. If you click "check path" you will notice we are using the local path and not s3. To use s3 we need to SSH into our instance and change the path.
 
-Open a terminal where you save your .pem file that we downloaded in step 3. For me, it is located in my project folder. Go to the AWS console, select your instance, and select "Connect' in the top right corner.
+Open a terminal where you save your .pem file that we downloaded in step 4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform). For me, it is located in my project folder. Go to the AWS console, select your instance, and select "Connect' in the top right corner.
 
 ![connect.png](./assets/connect.png)
 
