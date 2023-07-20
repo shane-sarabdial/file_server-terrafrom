@@ -7,9 +7,9 @@
 ---
 
 * [Introduction](#introduction)
-*  [Prerequisites](#Prerequisites)
-* [Tutorial](#Tutorial)
-  1. [Creating a New User and Creating an Access Key for our Terminal](#1.-creating-a-new-User-and-creating-an-access-key-for-our-terminal)
+*  [Prerequisites](#prerequisites)
+* [Tutorial](#tutorial)
+  1. [Creating a New User and Creating an Access Key for our Terminal](#1.-creating-a-new-user-and-creating-an-access-key-for-our-terminal)
   2. [Configuring Terraform to Access AWS](#Configuring-Terraform-to-Access-AWS)
   3. [Creating a Variable File](#Creating-a-Variable-File)
   4. [Creating an EC2 Instance with Terraform](#Creating-an-EC2-Instance-with-Terraform)
